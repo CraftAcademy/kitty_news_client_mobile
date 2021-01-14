@@ -1,7 +1,7 @@
 const initialState = {
   appHeader: "Kitty News",
   articles: [],
-  currentArticle: {}
+  currentArticle: {},
 };
 
 export default initialState;
