@@ -1,3 +1,5 @@
+import { action } from "commander";
+
 const rootReducer = (state, action) => {
   switch (action.type) {
     case "FETCH_ARTICLE_INDEX":
@@ -5,7 +7,11 @@ const rootReducer = (state, action) => {
         ...state,
         articles: action.payload,
       };
-
+case "SET_CURRENT_ARTICLE":
+  return {
+    ...state,
+    currentArticle: action.payload.article,
+  }
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import HomeScreen from './components/HomeScreen'
-
+import SingleArticle from './component/SingleArticle'
 
 const Stack = createStackNavigator()
 
@@ -27,6 +27,9 @@ const App = () => {
             }
           }}
         />
+        <Stack.Screen 
+        name="SingleArticle" 
+        component={SingleArticle}/> 
       </Stack.Navigator>
     </NavigationContainer>
   );

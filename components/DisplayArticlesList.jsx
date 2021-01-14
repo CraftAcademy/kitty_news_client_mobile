@@ -1,22 +1,37 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import SingleArticle from './component/SingleArticle'
 
 const DisplayArticlesList = ({ article }) => {
   return (
     <>
-      <Image
-        source={{ uri: article.image }}
-        defaultSource={{
-          uri:
-            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("SingleArticle", { article: article })
         }}
-        style={styles.image}
-      />
+      >
+        <Image
+          source={{ uri: article.image }}
+          defaultSource={{
+            uri:
+              "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
+          }}
+          style={styles.image}
+        />
+        <View style={styles.card}>
+          <Text style={styles.title}>{article.title}</Text>
+          <Text
+            style={styles.lead}>
+            {article.lead}
+          </Text>
+          <Text style={styles.created}>{article.created}</Text>
+        </View>
+      </TouchableOpacity>
+      {/* 
       <View style={styles.card}>
         <Text style={styles.title}>{article.title}</Text>
         <Text style={styles.lead}>{article.lead}</Text>
-        <Text style={styles.created}>{article.created}</Text>
-      </View>
+      </View> */}
     </>
   );
 };
