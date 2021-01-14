@@ -1,35 +1,26 @@
-import React, {useEffect} from 'react'
-import { StyleSheet, Text, View, Image} from 'react-native'
-import { useSelector } from 'react-redux'
-import ArticleServices from '../modules/ArticleServices'
-
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import { useSelector } from "react-redux";
+import ArticleServices from "../modules/ArticleServices";
 
 const SingleArticle = (props) => {
-  const { id } = props.route.params.article 
-  const { currentArticle } = useSelector(state => state)
+  debugger
+  const { id } = props.route.params.article;
+  const { currentArticle } = useSelector((state) => state);
   useEffect(() => {
-    ArticleServices.show(id)
-  }, [])
+    ArticleServices.show(id);
+  }, []);
   return (
-    <View
-    style={{ flex: 1 }}>
-      <Image 
-      source={{ uri: currentArticle.image }}
-      style={styles.image}
-      />
-      <Text
-      style={styles.title}>
-        {currentArticles.title}
-      </Text>
-      <Text
-      style={styles.body}>
-{currentArticle.body}
-      </Text>
+    <View style={{ flex: 1 }}>
+      {/* <Image source={{ uri: currentArticle.image }} style={styles.image} /> */}
+      <Text style={styles.title}>{currentArticle.title}</Text>
+      <Text 
+      style={styles.body}>{currentArticle.body}</Text>
     </View>
-  )
-}
+  );
+};
 
-export default SingleArticle
+export default SingleArticle;
 
 const styles = StyleSheet.create({
   card: {
