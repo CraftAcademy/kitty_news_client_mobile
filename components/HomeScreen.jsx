@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { useSelector } from "react-redux";
-import Articles from "../modules/Articles";
+import ArticleServices from "../modules/ArticleServices";
 import { StatusBar } from 'expo-status-bar'
-import ArticleIndexDetails from './ArticleIndexDetails'
+import DisplayArticlesList from './DisplayArticlesList'
 
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroudColor: "#ebc1c4",
+    backgroundColor: "#ebc1c4",
   },
 });
 
 const HomeScreen = () => {
   const { articles } = useSelector((state) => state)
   useEffect(() => {
-    Articles.index()}
+    ArticleServices.index()}
     ,[])
     return ( 
       <View
@@ -25,7 +25,7 @@ const HomeScreen = () => {
         <FlatList
         data={articles}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => <ArticleIndexDetails article={item} />}
+        renderItem={({item}) => <DisplayArticlesList article={item} />}
          />
       </View>
     )

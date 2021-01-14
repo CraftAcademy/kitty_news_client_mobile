@@ -14,7 +14,7 @@ const App = () => {
      <Stack.Navigator>
        <Stack.Screen
        name="Meow"
-       component={MainScreen}
+       component={HomeScreen}
        options= {{
          title:appHeader,
          headerStyle: {
