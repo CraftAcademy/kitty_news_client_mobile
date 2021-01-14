@@ -1,11 +1,34 @@
 import React from 'react';
-import { Appbar } from 'react-native-paper'
+import { useSelector } from 'react-redux'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack'
+import HomeScreen from './components/HomeScreen'
+
+
+const Stack = createStackNavigator()
 
 const App = () => {
+  const { appHeader } = useSelector(state => state)
   return (
-    <Appbar.Header>
-      <Appbar.Content title="Kitty News" />
-    </Appbar.Header>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Meow"
+          component={HomeScreen}
+          options={{
+            title: appHeader,
+            headerStyle: {
+              backgroundColor: 'black'
+            },
+            headerTitleStyle: {
+              color: 'rgb(240,230,140)',
+              fontSize: 25,
+              fontWeight: 'bold'
+            }
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
