@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import ArticleServices from "../modules/ArticleServices";
 
 const SingleArticle = (props) => {
-  debugger
   const { id } = props.route.params.article;
   const { currentArticle } = useSelector((state) => state);
   useEffect(() => {
@@ -12,7 +11,14 @@ const SingleArticle = (props) => {
   }, []);
   return (
     <View style={{ flex: 1 }}>
-      {/* <Image source={{ uri: currentArticle.image }} style={styles.image} /> */}
+      <Image
+        source={{ uri: currentArticle.image }}
+        defaultSource={{
+          uri:
+            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
+        }}
+        style={styles.image}
+      />
       <Text style={styles.title}>{currentArticle.title}</Text>
       <Text 
       style={styles.body}>{currentArticle.body}</Text>

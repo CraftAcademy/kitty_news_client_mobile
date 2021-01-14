@@ -10,7 +10,7 @@ const rootReducer = (state, action) => {
 case "SET_CURRENT_ARTICLE":
   return {
     ...state,
-    currentArticle: action.payload.article,
+    currentArticle: action.payload,
   }
     default:
       return state;

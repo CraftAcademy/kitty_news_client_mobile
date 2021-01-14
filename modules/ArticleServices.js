@@ -8,9 +8,8 @@ const ArticleServices = {
     store.dispatch({type: 'FETCH_ARTICLE_INDEX', payload: response.data.articles})
   },
   async show(id) {
-    debugger
     let response = await axios.get(API_URL + `/articles/${id}`)
-    store.dispatch({type: "SET_CURRENT_ARTICLE", payload: response.data.articles})
+    store.dispatch({type: "SET_CURRENT_ARTICLE", payload: response.data.article})
   }
 }
 

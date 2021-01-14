@@ -1,37 +1,34 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 
 const DisplayArticlesList = ({ navigation, article }) => {
   return (
-    <>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("SingleArticle", { article: article })
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate("SingleArticle", { article: article });
+      }}
+    >
+      <Image
+        source={{ uri: article.image }}
+        defaultSource={{
+          uri:
+            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
         }}
-      >
-        <Image
-          source={{ uri: article.image }}
-          defaultSource={{
-            uri:
-              "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
-          }}
-          style={styles.image}
-        />
-        <View style={styles.card}>
-          <Text style={styles.title}>{article.title}</Text>
-          <Text
-            style={styles.lead}>
-            {article.lead}
-          </Text>
-          <Text style={styles.created}>{article.created}</Text>
-        </View>
-      </TouchableOpacity>
-      {/* 
+        style={styles.image}
+      />
       <View style={styles.card}>
         <Text style={styles.title}>{article.title}</Text>
         <Text style={styles.lead}>{article.lead}</Text>
-      </View> */}
-    </>
+        <Text style={styles.created}>{article.created}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
