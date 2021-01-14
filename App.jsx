@@ -28,8 +28,13 @@ const App = () => {
           }}
         />
         <Stack.Screen 
-        name="SingleArticle" 
-        component={SingleArticle}/> 
+          name="SingleArticle" 
+          component={SingleArticle}
+          options={{
+            title: "The Cattiest News",
+            fontSize: 25
+          }}
+        /> 
       </Stack.Navigator>
     </NavigationContainer>
   );

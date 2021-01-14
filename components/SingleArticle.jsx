@@ -20,8 +20,11 @@ const SingleArticle = (props) => {
         style={styles.image}
       />
       <Text style={styles.title}>{currentArticle.title}</Text>
-      <Text 
-      style={styles.body}>{currentArticle.body}</Text>
+      <Text style={styles.lead}>{currentArticle.lead}</Text>
+      <Text style={styles.body}>{currentArticle.body}</Text>
+      <Text
+        style={styles.created}
+      >{`Created at: ${currentArticle.created}`}</Text>
     </View>
   );
 };
@@ -40,18 +43,22 @@ const styles = StyleSheet.create({
   },
   title: {
     padding: 20,
-    color: "pink",
+    color: "rgba(14, 13, 13, 0.6)",
     fontSize: 30,
   },
-  subtitle: {
-    color: "white",
+  lead: {
+    padding: 20,
     fontSize: 16,
   },
-
   body: {
     padding: 30,
-    color: "purple",
+    color: "black",
     fontSize: 18,
+  },
+  created: {
+    padding: 10,
+    color: "black",
+    fontSize: 10,
   },
   image: {
     height: 250,
