@@ -30,11 +30,10 @@ const styles = StyleSheet.create({
   card: {
     position: "absolute",
     width: Dimensions.get('window').width,
-    padding: 7,
     paddingLeft: 10,
-    paddingRight: 8,
-    bottom: 8,
-    backgroundColor: "rgba(0,0,0,0.3)",
+    paddingRight: 10,
+    bottom: 0,
+    backgroundColor: "rgba(14, 13, 13, 0.6)",
   },
   title: {
     color: "white",
@@ -47,6 +46,8 @@ const styles = StyleSheet.create({
   created: {
     color: "white",
     fontSize: 12,
+    paddingBottom: 5,
+    paddingTop: 3
   },
   image: {
     height: 250,

@@ -21,7 +21,7 @@ const App = () => {
               backgroundColor: 'black'
             },
             headerTitleStyle: {
-              color: 'white',
+              color: 'rgb(240,230,140)',
               fontSize: 25,
               fontWeight: 'bold'
             }
