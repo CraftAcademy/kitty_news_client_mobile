@@ -5,19 +5,19 @@ const DisplayArticlesList = ({ article }) => {
   return (
     <>
       <Image
-        // source={{ url: article.image }}
-        source={{ uri: "https://i.pinimg.com/originals/3c/da/56/3cda56c31c5022398cd70380c30fa4ef.jpg" }}
+        source={{ uri: article.image }}
+        defaultSource={{ uri: "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg" }}
         style={styles.image}
       />
-      <View>
-        <Text>
+      <View style={styles.card}>
+        <Text style={styles.title}>
           {article.title}
         </Text>
-        <Text>
+        <Text style={styles.lead}>
           {article.lead}
         </Text>
-        <Text>
-          {article.category}
+        <Text style={styles.created}>
+          {article.created}
         </Text>
       </View>
     </>
@@ -40,9 +40,13 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 30,
   },
-  subtitle: {
+  lead: {
     color: "white",
     fontSize: 16,
+  },
+  created: {
+    color: "white",
+    fontSize: 12,
   },
   image: {
     height: 250,
