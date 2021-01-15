@@ -5,8 +5,8 @@ import ArticleServices from "../modules/ArticleServices";
 import { StatusBar } from "expo-status-bar";
 import DisplayArticlesList from "./DisplayArticlesList";
 
-const HomeScreen = () => {
-  const { articles } = useSelector((state) => state);
+const HomeScreen = ({ navigation }) => {
+  const { articles } = useSelector(state => state);
   useEffect(() => {
     ArticleServices.index();
   }, []);
@@ -16,7 +16,9 @@ const HomeScreen = () => {
       <FlatList
         data={articles}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <DisplayArticlesList article={item} />}
+        renderItem={({ item }) => (
+          <DisplayArticlesList navigation={navigation} article={item} />
+        )}
       />
     </View>
   );

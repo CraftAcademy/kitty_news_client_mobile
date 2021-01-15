@@ -1,9 +1,20 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 
-const DisplayArticlesList = ({ article }) => {
+const DisplayArticlesList = ({ navigation, article }) => {
   return (
-    <>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate("SingleArticle", { article: article });
+      }}
+    >
       <Image
         source={{ uri: article.image }}
         defaultSource={{
@@ -17,7 +28,7 @@ const DisplayArticlesList = ({ article }) => {
         <Text style={styles.lead}>{article.lead}</Text>
         <Text style={styles.created}>{article.created}</Text>
       </View>
-    </>
+    </TouchableOpacity>
   );
 };
 
