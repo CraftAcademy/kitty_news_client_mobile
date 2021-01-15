@@ -8,7 +8,7 @@ import SingleArticle from "./components/SingleArticle";
 const Stack = createStackNavigator();
 
 const App = () => {
-  const { appHeader } = useSelector((state) => state);
+  const { appHeader } = useSelector(state => state)
   return (
     <NavigationContainer>
       <Stack.Navigator>

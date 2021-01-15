@@ -5,7 +5,7 @@ import ArticleServices from "../modules/ArticleServices";
 
 const SingleArticle = (props) => {
   const { id } = props.route.params.article;
-  const { currentArticle } = useSelector((state) => state);
+  const { currentArticle } = useSelector(state => state);
   useEffect(() => {
     ArticleServices.show(id);
   }, []);
@@ -65,48 +65,3 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
   },
 });
-
-// const SingleArticle = ({ navigation, article }) => {
-//   return (
-//     <TouchableOpacity
-//       onPress={() => {
-//         navigation.navigate("SingleArticle", { article: article })
-//       }}
-//     >
-//       <Image source={{ uri: article.image }} style={styles.image} />
-//       <View style={styles.card}>
-//         <Text style={styles.title}>{article.title}</Text>
-//         <Text
-//           style={styles.lead}>
-//           {article.lead}
-//         </Text>
-//       </View>
-//     </TouchableOpacity>
-//   )
-// }
-
-// export default SingleArticle
-
-// const styles = StyleSheet.create({
-//   card: {
-//     position: "absolute",
-//     width: Dimensions.get("window").width,
-//     padding: 7,
-//     paddingLeft: 10,
-//     paddingRight: 8,
-//     bottom: 8,
-//     backgroundColor: "rgba(0,0,0,0.3)",
-//   },
-//   title: {
-//     color: "white",
-//     fontSize: 30,
-//   },
-//   subtitle: {
-//     color: "white",
-//     fontSize: 16,
-//   },
-//   image: {
-//     height: 250,
-//     width: Dimensions.get("window").width,
-//   },
-// });

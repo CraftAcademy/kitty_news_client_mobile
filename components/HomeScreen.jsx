@@ -6,7 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import DisplayArticlesList from "./DisplayArticlesList";
 
 const HomeScreen = ({ navigation }) => {
-  const { articles } = useSelector((state) => state);
+  const { articles } = useSelector(state => state);
   useEffect(() => {
     ArticleServices.index();
   }, []);

@@ -1,5 +1,3 @@
-import { action } from "commander";
-
 const rootReducer = (state, action) => {
   switch (action.type) {
     case "FETCH_ARTICLE_INDEX":
