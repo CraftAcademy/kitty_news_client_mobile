@@ -14,6 +14,7 @@ const SingInScreen = (props) => {
       .signIn(email, password)
       .then((resp) => {
         props.navigation.navigate('Meow')
+        alert("Welcome cute kitty!")
       })
       .catch((error) => {
         setMessage(error.response.data.errors[0])
@@ -28,6 +29,7 @@ const SingInScreen = (props) => {
         onChangeText={(text) => setEmail(text)}
       />
       <TextInput
+        secureTextEntry={true}
         placeholder="Password"
         onChangeText={(text) => setPassword(text)}
       />
