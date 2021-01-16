@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import HomeScreen from './components/HomeScreen'
 import SingleArticle from './components/SingleArticle'
+import SignInScreen from './components/SignInScreen';
 import { FontAwesome5 } from '@expo/vector-icons'
 
 const Stack = createStackNavigator()
@@ -23,6 +24,7 @@ const App = () => {
                   name="cat"
                   size={24}
                   color="white"
+                  onPress={() => props.navigation.navigate('SignIn')}
                   style={{ marginRight: 15 }}
                 />
               )
@@ -31,6 +33,7 @@ const App = () => {
             ...styles
           })}
         />
+
         <Stack.Screen
           name="SingleArticle"
           component={SingleArticle}
@@ -38,6 +41,11 @@ const App = () => {
             title: 'The Cattiest News',
             ...styles
           }}
+        />
+
+        <Stack.Screen
+          name="SignIn"
+          component={SignInScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
