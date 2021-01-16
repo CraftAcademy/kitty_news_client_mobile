@@ -12,7 +12,7 @@ const SingInScreen = (props) => {
   const authenticateUser = () => {
     auth
       .signIn(email, password)
-      .then((resp) => {
+      .then(() => {
         props.navigation.navigate('Meow')
         alert("Welcome cute kitty!")
       })
