@@ -1,10 +1,24 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import { TextInput } from 'react-native-gesture-handler'
+import Auth from '../modules/auth'
 
 const SingInScreen = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [message, setMessage] = useState()
+  const auth = new Auth({ host: 'http://localhost:3000/api' })
+
+  const authenticateUser = () => {
+    auth
+      .signIn(email, password)
+      .then((resp) => {
+        props.navigation.navigate('Meow')
+      })
+      .catch((error) => {
+        setMessage(error.response.data.errors[0])
+      })
+  }
 
   return (
     <View>
@@ -22,6 +36,7 @@ const SingInScreen = (props) => {
         color="purple"
         onPress={() => authenticateUser()}
       />
+      {message && <Text>{message}</Text>}
     </View>
   )
 }
