@@ -17,10 +17,6 @@ const DisplayArticlesList = ({ navigation, article }) => {
     >
       <Image
         source={{ uri: article.image }}
-        defaultSource={{
-          uri:
-            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
-        }}
         style={styles.image}
       />
       <View style={styles.card}>
