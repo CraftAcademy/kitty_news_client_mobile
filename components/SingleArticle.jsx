@@ -13,10 +13,6 @@ const SingleArticle = (props) => {
     <View style={{ flex: 1 }}>
       <Image
         source={{ uri: currentArticle.image }}
-        defaultSource={{
-          uri:
-            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
-        }}
         style={styles.image}
       />
       <Text style={styles.title}>{currentArticle.title}</Text>
