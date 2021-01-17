@@ -7,20 +7,23 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
+import { useSelector } from "react-redux"
 
 const DisplayArticlesList = ({ navigation, article }) => {
+  const { credentials } = useSelector(state => state)
+
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate("SingleArticle", { article: article });
+        if (credentials) {
+          navigation.navigate("SingleArticle", { article: article })
+        } else {
+          alert("HISS! Please sign in to read an article!")
+        }
       }}
     >
       <Image
         source={{ uri: article.image }}
-        defaultSource={{
-          uri:
-            "https://thumbs.dreamstime.com/b/no-image-available-icon-vector-illustration-flat-design-140476186.jpg",
-        }}
         style={styles.image}
       />
       <View style={styles.card}>
