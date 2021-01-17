@@ -5,9 +5,9 @@ import ArticleServices from "../modules/ArticleServices";
 
 const SingleArticle = (props) => {
   const { id } = props.route.params.article;
-  const { currentArticle } = useSelector(state => state);
+  const { currentArticle, credentials } = useSelector(state => state);
   useEffect(() => {
-    ArticleServices.show(id);
+    ArticleServices.show(id, credentials);
   }, []);
   return (
     <View style={{ flex: 1 }}>

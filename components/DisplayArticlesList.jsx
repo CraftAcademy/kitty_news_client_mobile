@@ -7,12 +7,19 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
+import { useSelector } from "react-redux"
 
 const DisplayArticlesList = ({ navigation, article }) => {
+  const { credentials } = useSelector(state => state)
+
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate("SingleArticle", { article: article });
+        if (credentials) {
+          navigation.navigate("SingleArticle", { article: article })
+        } else {
+          alert("HISS! Please sign in to read an article!")
+        }
       }}
     >
       <Image

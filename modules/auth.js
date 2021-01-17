@@ -1,4 +1,5 @@
 import axios from 'axios'
+import store from '../state/store/store'
 import AsyncStorage from '@react-native-community/async-storage'
 
 const apiUrl =
@@ -99,6 +100,10 @@ class Auth {
             client: headers.client,
             'access-token': headers['access-token'],
           },
+        })
+        store.dispatch({
+          type: 'SET_CREDENTIALS',
+          payload: response.headers,
         })
         this.setSession(response.headers)
         resolve(response.data)
