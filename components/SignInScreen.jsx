@@ -7,14 +7,14 @@ const SingInScreen = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState()
-  const auth = new Auth({ host: 'http://localhost:3000/api' })
+  const auth = new Auth({ host: 'https://kitty-news.herokuapp.com/api' })
 
   const authenticateUser = () => {
     auth
       .signIn(email, password)
       .then(() => {
         props.navigation.navigate('Meow')
-        alert("Welcome cute kitty!")
+        alert('Welcome cute kitty!')
       })
       .catch((error) => {
         setMessage(error.response.data.errors[0])
@@ -23,19 +23,21 @@ const SingInScreen = (props) => {
 
   return (
     <View>
-      <Text>Sign In</Text>
+      <Text style={{ marginBottom: 20, marginTop: 10 }}>Sign In</Text>
       <TextInput
-        placeholder="Email"
+        placeholder='Email'
+        style={styles.input}
         onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         secureTextEntry={true}
-        placeholder="Password"
+        placeholder='Password'
+        style={styles.input}
         onChangeText={(text) => setPassword(text)}
       />
       <Button
-        title="Sign-In"
-        color="purple"
+        title='Sign-In'
+        color='black'
         onPress={() => authenticateUser()}
       />
       {message && <Text>{message}</Text>}
@@ -45,4 +47,12 @@ const SingInScreen = (props) => {
 
 export default SingInScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  input: {
+    marginBottom: 20,
+    padding: 10,
+    height: 40,
+    borderColor: 'black',
+    borderWidth: 1,
+  },
+})

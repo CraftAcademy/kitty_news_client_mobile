@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '../state/store/store'
 
-const API_URL = 'http://localhost:3000/api'
+const API_URL = 'https://kitty-news.herokuapp.com/api'
 const ArticleServices = {
   async index() {
     let response = await axios.get(API_URL + '/articles')
