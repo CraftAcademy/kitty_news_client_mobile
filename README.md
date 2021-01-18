@@ -6,12 +6,12 @@ This is the mobile application for users of Kitty News. Users can view a list of
 
 ## The code
 
-### Installments
+### Installation
 
 1. Fork and clone the repo below to your local workspace.
    [Kitty News Client Mobile](https://github.com/CraftAcademy/kitty_news_client_mobile)</br>
 
-2. Install the project dependencies
+2. Install the project dependencies.
 
 ```
 yarn
@@ -23,7 +23,7 @@ yarn
 yarn ios
 ```
 
-OR
+or
 
 ```
 yarn android
