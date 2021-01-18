@@ -8,8 +8,7 @@ This is the mobile application for users of Kitty News. Users can view a list of
 
 ### Installation
 
-1. Fork and clone the repo below to your local workspace.
-   [Kitty News Client Mobile](https://github.com/CraftAcademy/kitty_news_client_mobile)</br>
+1. Fork and clone [Kitty News Client Mobile](https://github.com/CraftAcademy/kitty_news_client_mobile) to your local workspace.
 
 2. Install the project dependencies.
 
